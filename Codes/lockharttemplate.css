@@ -1,0 +1,390 @@
+/* ========================================
+   LOCKHART TEMPLATE
+   ========================================= */
+:root{--lockback:linear-gradient(240deg, #242128, transparent);}
+.light-mode{--lockback:linear-gradient(240deg, #d9d8d9, transparent);}
+.Lock {
+  width: 99%;
+  height: 600px;
+  margin: 20px auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  background: var(--lockback);
+  color: var(--text);
+  overflow: hidden;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.Lock .Lo2 {
+  width: 300px;
+  height: 600px;
+}
+
+/* ================================================
+   INFORMATION COLUMN
+   ================================================ */
+
+.Lock .Lockitems {
+  width: 220px;
+  height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.Lock .Lockitems br{display:none}
+
+/* ================================================
+   CENTRAL PORTRAIT + SINGLE RIPPLE
+   ================================================ */
+.Lock .cryc {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================================================
+   CENTRAL IMAGE
+   ================================================== */
+.Lock .crysi {
+  width: 105px;
+  height: 105px;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--ring);
+  box-sizing: border-box;
+  background: var(--bg);
+}
+
+.Lock .crysi img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+.Lock .crysi:hover img {
+  transform: scale(1.05);
+}
+/* ================================================
+   SINGLE RIPPLE
+   ================================================= */
+.Lock .crystal {
+  width: 105px;
+  height: 105px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  background: transparent;
+  z-index: 3;
+  pointer-events: none;
+  animation: LockRipple 3.5s ease-out infinite;
+}
+
+
+/* ==============================================
+   REMOVE ANY OLD PSEUDO-RIPPLES
+   =============================================== */
+.Lock .cryc::before,
+.Lock .cryc::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+
+.Lock .crystal::before,
+.Lock .crystal::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+/* ===============================================
+   SINGLE RIPPLE ANIMATION
+   =================================================== */
+
+@keyframes LockRipple {
+  0% {
+    width: 105px;
+    height: 105px;
+    opacity: 0.65;
+    transform: translate(-50%, -50%);
+  }
+  65% {
+    width: 145px;
+    height: 145px;
+    opacity: 0.20;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    width: 175px;
+    height: 175px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ==================================================
+   QUOTE / FLAVOR TEXT
+   =================================================== */
+
+.Lock .Lockitems fr {
+  display: block;
+  margin: 0 0 35px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.15;
+  font-style: italic;
+  text-align: center;
+  color: var(--white);
+}
+
+.Lock .Lockitems fr::before {
+  content: "Ø";
+  display: block;
+  margin-bottom: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1;
+  text-align: center;
+  color: var(--white);
+}
+
+/* ===================================================
+   INFORMATION ROWS
+   ========================================================= */
+
+.Lock .Lockitems d {
+  color:var(--white);
+  display: block;
+  width: 100%;
+  padding: 0 0 9px;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--white);
+  font-size: 12px;
+  line-height: 1.2;
+}
+.Lock .Lockitems d br{display:block}
+
+.Lock .Lockitems d:last-child {
+  margin-bottom: 0;
+}
+
+/* =======================================
+   USER / CHARACTER MENTION
+   ======================================== */
+
+.Lock .Lockitems d a {
+  display: inline-block;
+  padding: 2px 5px;
+  background: #8064dc;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+/* ==================================
+   MAIN TEXT COLUMN
+   ===================================== */
+
+.Lock .Lo1 {
+  height: 600px;
+  width:50%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* =============================================
+   TOPIC TITLE
+   ============================================== */
+
+.Lock .Lo1 h {
+  display: block;
+  width: 100%;
+  margin: 0 auto 35px;
+  padding: 0 0 12px;
+  position: relative;
+  font-family: Impact;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  text-align: center;
+  color: #f4f1f3;
+}
+
+.Lock .Lo1 h::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+}
+
+/* ==============================================
+   POST TEXT
+   =============================================== */
+
+.Lock .Locktx {
+  width: 100%;
+  overflow:auto;
+  height:85%;
+  padding:10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+  color:var(--white)
+}
+
+/* ===============================================
+   TEXT FORMATTING
+   ================================================ */
+
+.Lock .Locktx a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Lock .Locktx a:hover { color: #fff;text-decoration: underline;}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+   ========================================== */
+
+.Lock ::-webkit-scrollbar {width: 4px;}
+.Lock ::-webkit-scrollbar-track { background: var(--lockback);}
+.Lock ::-webkit-scrollbar-thumb {background: var(--accent1); border-radius: 10px;}
+
+/* ===================================================
+   RESPONSIVE — TABLET
+   ==================================================== */
+
+@media screen and (max-width: 1050px) {
+  .Lock {
+    width: 95%;
+
+    grid-template-columns:
+      320px
+      200px
+      minmax(0, 1fr);
+  }
+
+  .Lock .Lo2 {
+    width: 300px;
+  }
+
+  .Lock .Lockitems {
+    width: 200px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .Lock .Lo1 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .Lock .Lo1 h {
+    font-size: 34px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+
+@media screen and (max-width: 750px) {
+  .Lock {
+    width: 95%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+  .Lock .Lo2,
+  .Lock .Lockitems,
+  .Lock .Lo1 {
+    order: initial !important;
+
+    width: 100%;
+
+    min-height: 0;
+  }
+
+  .Lock .Lo2 {
+    height: 500px;
+  }
+
+  .Lock .Lockitems {
+    padding: 45px 35px;
+  }
+
+
+  .Lock .cryc {
+    margin-bottom: 45px;
+  }
+
+  .Lock .Lo1 {
+    padding: 45px 35px;
+  }
+
+  .Lock .Lo1 h {
+    font-size: 32px;
+  }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .Lock .crystal,
+  .Lock .crystal::before,
+  .Lock .crystal::after {
+    animation: none;
+  }
+
+  .Lock .Lo2 img,
+  .Lock .crysi img {
+    transition: none;
+  }
+}

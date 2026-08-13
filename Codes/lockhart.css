@@ -374,8 +374,7 @@
 
 .Lock ::-webkit-scrollbar {width: 4px;}
 .Lock ::-webkit-scrollbar-track { background: transparent;}
-
-.Lock ::-webkit-scrollbar-thumb {background: var(--white); border-radius: 10px;}
+.Lock ::-webkit-scrollbar-thumb {background: var(--accent2); border-radius: 10px;}
 
 /* ===================================================
    RESPONSIVE — TABLET
